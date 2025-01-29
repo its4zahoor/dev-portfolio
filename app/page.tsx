@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 export default function Home() {
   return (
-    <div className='min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-sans'>
+    <div className='min-h-screen bg-gradient-to-r from-red-700 via-purple-700 to-purple-900 text-white font-sans'>
       <Head>
         <title>Abdul Zahoor | Portfolio</title>
       </Head>
@@ -84,6 +84,31 @@ export default function Home() {
               <li>Implemented a blog system for event tracking.</li>
             </ul>
           </div>
+          <div>
+            <h3 className='text-3xl font-semibold'>
+              Frontend Developer - DCAO (2020)
+            </h3>
+            <ul className='list-disc list-inside text-gray-700 mt-2'>
+              <li>Developed dynamic kiosk portal for COVID monitoring.</li>
+              <li>
+                Implemented WebRTC, MQTT, and Socket.io for real-time
+                communications.
+              </li>
+              <li>
+                Collaborated with backend developers to streamline API requests.
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 className='text-3xl font-semibold'>
+              Junior Software Engineer - DevUp Technologies (2018 - 2020)
+            </h3>
+            <ul className='list-disc list-inside text-gray-700 mt-2'>
+              <li>Developed web and Windows Forms applications.</li>
+              <li>Created React templates for faster project setup.</li>
+              <li>Automated tool generation for database schemas.</li>
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -93,7 +118,8 @@ export default function Home() {
           Education & Awards
         </h2>
         <p className='text-gray-700 text-lg'>
-          B.S. in Computer Science - Air University (2014-2018) | Gold Medalist
+          B.S. in Computer Science - Air University, Pakistan (2014-2018) | Gold
+          Medalist
         </p>
         <p className='text-gray-700 text-lg'>
           Runners Up - Rafay Hackathon 2023

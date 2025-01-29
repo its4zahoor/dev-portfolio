@@ -13,7 +13,11 @@ export default function Home() {
           Abdul Zahoor
         </h1>
         <p className='mt-4 text-lg md:text-2xl text-gray-100'>
-          Senior Software Engineer | Frontend & Fullstack Developer
+          Senior Frontend Developer | Aspiring Fullstack Developer
+        </p>
+        <p className='mt-4 text-sm md:text-sm text-gray-100'>
+          React, JavaScript, Next.js, HTML/CSS Expert | Express, Node.js, MySQL,
+          MongoDB
         </p>
         <div className='mt-6 flex space-x-6'>
           <a

@@ -1,101 +1,123 @@
-import Image from "next/image";
+import Head from 'next/head';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className='min-h-screen bg-gradient-to-r from-purple-500 via-pink-500 to-red-500 text-white font-sans'>
+      <Head>
+        <title>Abdul Zahoor | Portfolio</title>
+      </Head>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* Hero Section */}
+      <section className='flex flex-col items-center justify-center h-screen text-center p-6'>
+        <h1 className='text-6xl md:text-8xl font-extrabold text-white drop-shadow-lg'>
+          Abdul Zahoor
+        </h1>
+        <p className='mt-4 text-lg md:text-2xl text-gray-100'>
+          Senior Software Engineer | Frontend & Fullstack Developer
+        </p>
+        <div className='mt-6 flex space-x-6'>
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='mailto:its4zahoor@gmail.com'
+            className='text-yellow-300 hover:underline'
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+            Email
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            href='https://github.com/its4zahoor'
+            className='text-yellow-300 hover:underline'
           >
-            Read our docs
+            GitHub
+          </a>
+          <a
+            href='https://www.linkedin.com/in/its4zahoor'
+            className='text-yellow-300 hover:underline'
+          >
+            LinkedIn
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+      </section>
+
+      {/* Skills Section */}
+      <section className='py-16 px-8 text-center bg-white text-gray-900 rounded-t-3xl shadow-lg'>
+        <h2 className='text-5xl font-bold mb-8 text-pink-600'>Skills</h2>
+        <p className='text-gray-700 text-lg'>
+          JavaScript, TypeScript, Node.js, MongoDB, MySQL, React.js, Next.js,
+          Redux, Tailwind CSS, MUI, Storybook, Git, Webpack, Vite.js
+        </p>
+      </section>
+
+      {/* Work Experience Section */}
+      <section className='py-16 px-8 text-center bg-gray-100 text-gray-900'>
+        <h2 className='text-5xl font-bold mb-8 text-purple-700'>
+          Work Experience
+        </h2>
+        <div className='text-left max-w-3xl mx-auto space-y-6'>
+          <div>
+            <h3 className='text-3xl font-semibold'>
+              Senior Frontend Engineer - Rafay Systems (2020 - Present)
+            </h3>
+            <ul className='list-disc list-inside text-gray-700 mt-2'>
+              <li>
+                Collaborated with designers, product managers, and backend
+                developers.
+              </li>
+              <li>Led UI revamp efforts and implemented best UI practices.</li>
+              <li>Integrated Storybook for better component documentation.</li>
+              <li>
+                Enhanced performance using code splitting and memoization.
+              </li>
+              <li>Implemented Vite.js to improve build times.</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className='text-3xl font-semibold'>
+              Freelance Full-Stack Developer - Khubaib Foundation (2024)
+            </h3>
+            <ul className='list-disc list-inside text-gray-700 mt-2'>
+              <li>
+                Developed main website and Content Management System (CMS).
+              </li>
+              <li>
+                Designed UI based on Figma and built using Next.js and
+                Material-UI.
+              </li>
+              <li>Implemented a blog system for event tracking.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* Education & Awards Section */}
+      <section className='py-16 px-8 text-center bg-white text-gray-900 rounded-b-3xl shadow-lg'>
+        <h2 className='text-5xl font-bold mb-8 text-red-500'>
+          Education & Awards
+        </h2>
+        <p className='text-gray-700 text-lg'>
+          B.S. in Computer Science - Air University (2014-2018) | Gold Medalist
+        </p>
+        <p className='text-gray-700 text-lg'>
+          Runners Up - Rafay Hackathon 2023
+        </p>
+      </section>
+
+      {/* Resume Section */}
+      <section className='py-16 px-8 text-center bg-gray-800 text-white'>
+        <h2 className='text-5xl font-bold mb-8 text-yellow-400'>Resume</h2>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+          href='/Abdul_Zahoor_Resume_2501.pdf'
+          download
+          className='px-6 py-3 bg-yellow-500 hover:bg-yellow-600 rounded-lg text-lg shadow-lg'
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+          Download Resume
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <div className='mt-4'>
+          <iframe
+            src='/Abdul_Zahoor_Resume_2501.pdf'
+            className='w-full h-96 rounded-lg shadow-lg'
+            title='Resume PDF'
+          ></iframe>
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,5 +1,7 @@
 import Head from 'next/head';
 
+const resumeSrc = '/Abdul_Zahoor_Resume.pdf';
+
 export default function Home() {
   return (
     <div className='min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 text-slate-800 font-sans'>
@@ -469,7 +471,7 @@ export default function Home() {
 
           <div className='mb-8'>
             <a
-              href='/Abdul_Zahoor_Resume_2501.pdf'
+              href={resumeSrc}
               download
               className='inline-flex items-center gap-2 px-8 py-4 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors duration-200 font-medium'
             >
@@ -492,7 +494,7 @@ export default function Home() {
 
           <div className='bg-white rounded-xl shadow-lg overflow-hidden'>
             <iframe
-              src='/Abdul_Zahoor_Resume_2501.pdf'
+              src={resumeSrc}
               className='w-full h-96 md:h-[600px]'
               title='Resume PDF'
             ></iframe>

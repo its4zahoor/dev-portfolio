@@ -3,6 +3,8 @@ import Head from 'next/head';
 const resumeSrc = '/Abdul_Zahoor_Resume.pdf';
 
 export default function Home() {
+  const currentYear = new Date().getFullYear();
+
   return (
     <div className='min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 text-slate-800 font-sans'>
       <Head>
@@ -531,7 +533,7 @@ export default function Home() {
             </a>
           </div>
           <p className='text-slate-400 text-sm'>
-            © 2024 Abdul Zahoor. All rights reserved.
+            © {currentYear} Abdul Zahoor. All rights reserved.
           </p>
         </div>
       </footer>

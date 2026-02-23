@@ -1,18 +1,16 @@
 {
-  "name": "zahoor.dev",
-  "short_name": "Zahoor",
+  "name": "Abdul Zahoor Portfolio",
+  "short_name": "Abdul Zahoor",
   "icons": [
     {
-      "src": "/app/web-app-manifest-192x192.png",
+      "src": "/android-icon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "maskable"
+      "type": "image/png"
     },
     {
-      "src": "/app/web-app-manifest-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
+      "src": "/android-icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
     }
   ],
   "theme_color": "#ffffff",

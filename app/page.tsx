@@ -1,49 +1,16 @@
 import Head from 'next/head';
-import CurrentYear from './components/CurrentYear';
+import Image from 'next/image';
 
 const resumeSrc = '/Abdul_Zahoor_Resume.pdf';
+const curentYear = new Date().getFullYear();
 
 export default function Home() {
-
   return (
     <div className='min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 text-slate-800 font-sans'>
       <Head>
         <title>
           Full Stack Expert Abdul Zahoor | React & Next.js Specialist
         </title>
-        <meta
-          name='description'
-          content="Senior Frontend Engineer skilled in UI revamps, performance optimization, and full-stack development. Check out Abdul Zahoor's professional journey and resume."
-        />
-
-        <meta property='og:url' content='https://abdulzahoor.dev' />
-        <meta property='og:type' content='website' />
-        <meta
-          property='og:title'
-          content='Full Stack Expert Abdul Zahoor | React & Next.js Specialist'
-        />
-        <meta
-          property='og:description'
-          content="Senior Frontend Engineer skilled in UI revamps, performance optimization, and full-stack development. Check out Abdul Zahoor's professional journey and resume."
-        />
-        <meta
-          property='og:image'
-          content='https://og-image-generator-prod.s3.amazonaws.com/ai/generated/5255e710-10c1-11f1-9a49-7fbfae8c29a1/d87e4e2d-4766-4a15-a1b2-18adfb95fb88.png'
-        />
-
-        <meta property='twitter:url' content='https://abdulzahoor.dev' />
-        <meta
-          name='twitter:title'
-          content='Full Stack Expert Abdul Zahoor | React & Next.js Specialist'
-        />
-        <meta
-          name='twitter:description'
-          content="Senior Frontend Engineer skilled in UI revamps, performance optimization, and full-stack development. Check out Abdul Zahoor's professional journey and resume."
-        />
-        <meta
-          name='twitter:image'
-          content='https://og-image-generator-prod.s3.amazonaws.com/ai/generated/5255e710-10c1-11f1-9a49-7fbfae8c29a1/d87e4e2d-4766-4a15-a1b2-18adfb95fb88.png'
-        />
       </Head>
 
       {/* Navigation */}
@@ -87,8 +54,14 @@ export default function Home() {
       <section className='flex flex-col items-center justify-center min-h-screen text-center p-6 pt-20'>
         <div className='max-w-4xl mx-auto'>
           <div className='mb-8'>
-            <div className='w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center'>
-              <span className='text-4xl font-bold text-white'>AZ</span>
+            <div className='w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center overflow-hidden'>
+              <Image
+                src='/Abdul_Zahoor.jpg'
+                alt='Profile Picture'
+                width={128}
+                height={128}
+                className='w-full h-full object-cover'
+              />
             </div>
           </div>
           <h1 className='text-5xl md:text-7xl font-bold text-slate-800 mb-6 leading-tight'>
@@ -544,8 +517,8 @@ export default function Home() {
         <div className='max-w-4xl mx-auto text-center'>
           <h3 className='text-2xl font-semibold mb-4'>Abdul Zahoor</h3>
           <p className='text-slate-300 mb-6'>
-            Senior Frontend Developer passionate about creating exceptional user
-            experiences.
+            Full Stack Expert passionatly creating GenAI products and building
+            scalable web applications.
           </p>
           <div className='flex justify-center space-x-6 mb-6'>
             <a
@@ -568,7 +541,7 @@ export default function Home() {
             </a>
           </div>
           <p className='text-slate-400 text-sm'>
-            © 2025 - <CurrentYear /> Abdul Zahoor. All rights reserved.
+            © 2025 - {curentYear} Abdul Zahoor. All rights reserved.
           </p>
         </div>
       </footer>

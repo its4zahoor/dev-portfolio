@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Abdul Zahoor | Portfolio',
+  title: 'Abdul Zahoor | Full Stack Expert | React & Next.js Specialist',
   description:
     'Full Stack Expert | React & Next.js Specialist | React, JavaScript, Next.js, HTML/CSS Expert | Express, Node.js, MySQL, MongoDB ',
 };
@@ -26,21 +26,76 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <head>
+        <link rel='shortcut icon' href='/favicon.ico' />
         <link
           rel='icon'
           type='image/png'
-          href='/app/favicon-96x96.png'
-          sizes='96x96'
+          sizes='192x192'
+          href='/android-icon-192x192.png'
         />
-        <link rel='icon' type='image/svg+xml' href='/app/favicon.svg' />
-        <link rel='shortcut icon' href='/app/favicon.ico' />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='96x96'
+          href='/favicon-96x96.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='32x32'
+          href='/favicon-32x32.png'
+        />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='16x16'
+          href='/favicon-16x16.png'
+        />
         <link
           rel='apple-touch-icon'
           sizes='180x180'
-          href='/app/apple-touch-icon.png'
+          href='/apple-icon-180x180.png'
         />
-        <meta name='apple-mobile-web-app-title' content='zahoor.dev' />
-        <link rel='manifest' href='/app/site.webmanifest' />
+        <link
+          rel='icon'
+          type='image/png'
+          sizes='192x192'
+          href='/android-icon-192x192.png'
+        />
+        <link rel='manifest' href='/site.webmanifest' />
+        <meta
+          name='description'
+          content="Senior Frontend Engineer skilled in UI revamps, performance optimization, and full-stack development. Check out Abdul Zahoor's professional journey and resume."
+        />
+
+        <meta property='og:url' content='https://zahoor.dev' />
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:title'
+          content='Full Stack Expert Abdul Zahoor | React & Next.js Specialist'
+        />
+        <meta
+          property='og:description'
+          content="Senior Frontend Engineer skilled in UI revamps, performance optimization, and full-stack development. Check out Abdul Zahoor's professional journey and resume."
+        />
+        <meta
+          property='og:image'
+          content='https://og-image-generator-prod.s3.amazonaws.com/ai/generated/5255e710-10c1-11f1-9a49-7fbfae8c29a1/d87e4e2d-4766-4a15-a1b2-18adfb95fb88.png'
+        />
+
+        <meta property='twitter:url' content='https://zahoor.dev' />
+        <meta
+          name='twitter:title'
+          content='Full Stack Expert Abdul Zahoor | React & Next.js Specialist'
+        />
+        <meta
+          name='twitter:description'
+          content="Senior Frontend Engineer skilled in UI revamps, performance optimization, and full-stack development. Check out Abdul Zahoor's professional journey and resume."
+        />
+        <meta
+          name='twitter:image'
+          content='https://og-image-generator-prod.s3.amazonaws.com/ai/generated/5255e710-10c1-11f1-9a49-7fbfae8c29a1/d87e4e2d-4766-4a15-a1b2-18adfb95fb88.png'
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

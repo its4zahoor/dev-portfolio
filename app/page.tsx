@@ -75,9 +75,9 @@ export default function Home() {
             Specialized in React, Next.js, and full-stack development.
           </p>
           <p className='text-xs text-slate-500 mb-8'>
-            I&apos;m a developer with extensive frontend experience, passionate
-            about building scalable and efficient web applications with
-            cutting-edge technologies.
+            I&apos;m a full-stack developer with extensive frontend experience,
+            passionate about building scalable and efficient web applications
+            with cutting-edge technologies.
           </p>
           <div className='flex flex-wrap justify-center gap-4 mb-8'>
             <a
@@ -279,7 +279,7 @@ export default function Home() {
             <div className='bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow duration-200'>
               <div className='flex flex-col md:flex-row md:items-center md:justify-between mb-4'>
                 <h3 className='text-2xl font-semibold text-slate-800'>
-                  Freelance Full-Stack Developer
+                  Full-Stack Developer (Volunteer)
                 </h3>
                 <span className='text-slate-500 font-medium'>2024</span>
               </div>
@@ -517,7 +517,7 @@ export default function Home() {
         <div className='max-w-4xl mx-auto text-center'>
           <h3 className='text-2xl font-semibold mb-4'>Abdul Zahoor</h3>
           <p className='text-slate-300 mb-6'>
-            Full Stack Expert passionatly creating GenAI products and building
+            Full Stack Expert passionately creating GenAI products and building
             scalable web applications.
           </p>
           <div className='flex justify-center space-x-6 mb-6'>

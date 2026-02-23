@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Abdul Zahoor | Portfolio',
   description:
-    'Senior Frontend Developer | Aspiring Fullstack Developer | React, JavaScript, Next.js, HTML/CSS Expert | Express, Node.js, MySQL, MongoDB ',
+    'Full Stack Expert | React & Next.js Specialist | React, JavaScript, Next.js, HTML/CSS Expert | Express, Node.js, MySQL, MongoDB ',
 };
 
 export default function RootLayout({

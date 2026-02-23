@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Head from 'next/head';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 
@@ -25,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <head>
+      <Head>
         <link rel='shortcut icon' href='/favicon.ico' />
         <link
           rel='icon'
@@ -65,7 +66,7 @@ export default function RootLayout({
         <link rel='manifest' href='/site.webmanifest' />
         <meta
           name='description'
-          content="Senior Frontend Engineer skilled in UI revamps, performance optimization, and full-stack development. Check out Abdul Zahoor's professional journey and resume."
+          content='Full Stack Expert Abdul Zahoor | React & Next.js Specialist | Skilled in UI revamps, performance optimization, and full-stack development.'
         />
 
         <meta property='og:url' content='https://zahoor.dev' />
@@ -76,12 +77,9 @@ export default function RootLayout({
         />
         <meta
           property='og:description'
-          content="Senior Frontend Engineer skilled in UI revamps, performance optimization, and full-stack development. Check out Abdul Zahoor's professional journey and resume."
+          content='Full Stack Expert Abdul Zahoor | React & Next.js Specialist | Skilled in UI revamps, performance optimization, and full-stack development.'
         />
-        <meta
-          property='og:image'
-          content='https://og-image-generator-prod.s3.amazonaws.com/ai/generated/5255e710-10c1-11f1-9a49-7fbfae8c29a1/d87e4e2d-4766-4a15-a1b2-18adfb95fb88.png'
-        />
+        <meta property='og:image' content='https://zahoor.dev/og-image.png' />
 
         <meta property='twitter:url' content='https://zahoor.dev' />
         <meta
@@ -90,13 +88,10 @@ export default function RootLayout({
         />
         <meta
           name='twitter:description'
-          content="Senior Frontend Engineer skilled in UI revamps, performance optimization, and full-stack development. Check out Abdul Zahoor's professional journey and resume."
+          content='Full Stack Expert Abdul Zahoor | React & Next.js Specialist | Sjkilled in UI revamps, performance optimization, and full-stack development.'
         />
-        <meta
-          name='twitter:image'
-          content='https://og-image-generator-prod.s3.amazonaws.com/ai/generated/5255e710-10c1-11f1-9a49-7fbfae8c29a1/d87e4e2d-4766-4a15-a1b2-18adfb95fb88.png'
-        />
-      </head>
+        <meta name='twitter:image' content='https://zahoor.dev/og-image.png' />
+      </Head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

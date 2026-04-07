@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Abdul Zahoor | Full Stack Expert | React & Next.js Specialist',
+  title: 'Abdul Zahoor | React Consultant for SaaS Dashboards',
   description:
-    'Full Stack Expert | React & Next.js Specialist | React, JavaScript, Next.js, HTML/CSS Expert | Express, Node.js, MySQL, MongoDB ',
+    'React consultant for SaaS dashboards and high-performance web apps. I help startups build scalable React, Next.js, FastAPI, Python, and PostgreSQL products.',
 };
 
 export default function RootLayout({
@@ -66,29 +66,29 @@ export default function RootLayout({
         <link rel='manifest' href='/site.webmanifest' />
         <meta
           name='description'
-          content='Full Stack Expert Abdul Zahoor | React & Next.js Specialist | Skilled in UI revamps, performance optimization, and full-stack development.'
+          content='React consultant for SaaS dashboards and high-performance web apps. Skilled in React, Next.js, frontend performance, FastAPI, Python, and PostgreSQL.'
         />
 
         <meta property='og:url' content='https://zahoor.dev' />
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
-          content='Full Stack Expert Abdul Zahoor | React & Next.js Specialist'
+          content='Abdul Zahoor | React Consultant for SaaS Dashboards'
         />
         <meta
           property='og:description'
-          content='Full Stack Expert Abdul Zahoor | React & Next.js Specialist | Skilled in UI revamps, performance optimization, and full-stack development.'
+          content='I help startups build fast, scalable React apps with strong dashboard UX, performance optimization, and practical backend support.'
         />
         <meta property='og:image' content='https://zahoor.dev/og-image.png' />
 
         <meta property='twitter:url' content='https://zahoor.dev' />
         <meta
           name='twitter:title'
-          content='Full Stack Expert Abdul Zahoor | React & Next.js Specialist'
+          content='Abdul Zahoor | React Consultant for SaaS Dashboards'
         />
         <meta
           name='twitter:description'
-          content='Full Stack Expert Abdul Zahoor | React & Next.js Specialist | Sjkilled in UI revamps, performance optimization, and full-stack development.'
+          content='React consultant for SaaS dashboards and high-performance web apps, with FastAPI, Python, and PostgreSQL support when products need backend delivery too.'
         />
         <meta name='twitter:image' content='https://zahoor.dev/og-image.png' />
       </Head>

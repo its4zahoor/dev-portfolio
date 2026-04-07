@@ -1,548 +1,439 @@
-import Head from 'next/head';
 import Image from 'next/image';
 
 const resumeSrc = '/Abdul_Zahoor_Resume.pdf';
-const curentYear = new Date().getFullYear();
+const currentYear = new Date().getFullYear();
+
+const services = [
+  'Build SaaS dashboards from scratch',
+  'Fix slow React apps and improve frontend performance',
+  'Clean and scale messy codebases',
+  'Convert Figma designs into production-ready UI',
+];
+
+const focusAreas = [
+  'SaaS Dashboards',
+  'Performance Optimization',
+  'Next.js Applications',
+];
+
+const projects = [
+  {
+    title: 'SaaS Platform UI Modernization',
+    company: 'Rafay Systems',
+    summary:
+      'Led dashboard-focused frontend improvements for a production SaaS platform used by enterprise teams.',
+    results: [
+      'Improved maintainability with stronger component architecture and reusable UI patterns',
+      'Reduced friction in development by introducing Storybook and a faster Vite-based workflow',
+      'Optimized rendering and bundle strategy for complex, data-heavy screens',
+    ],
+    accent: 'from-amber-100 via-orange-50 to-white',
+  },
+  {
+    title: 'Content Platform & CMS',
+    company: 'Khubaib Foundation',
+    summary:
+      'Built a production-ready website and CMS experience with a polished UI and structured content workflows.',
+    results: [
+      'Translated Figma designs into a responsive Next.js interface',
+      'Created a blog and content publishing system for ongoing updates and event tracking',
+      'Delivered a cleaner admin and content experience for non-technical users',
+    ],
+    accent: 'from-emerald-100 via-teal-50 to-white',
+  },
+  {
+    title: 'Real-Time Monitoring Portal',
+    company: 'DCAO',
+    summary:
+      'Developed a live monitoring interface for COVID-related kiosk and reporting workflows.',
+    results: [
+      'Built a dashboard experience around real-time data flows and status updates',
+      'Integrated WebRTC, MQTT, and Socket.io for live communication features',
+      'Worked closely with backend teams to keep API integrations reliable and responsive',
+    ],
+    accent: 'from-sky-100 via-cyan-50 to-white',
+  },
+];
+
+const experience = [
+  {
+    role: 'Senior Frontend Engineer',
+    company: 'Rafay Systems',
+    period: '2020 - Present',
+    points: [
+      'Built and improved React interfaces for a complex SaaS product with dashboard-heavy workflows.',
+      'Led UI revamps, component standardization, and frontend performance improvements.',
+      'Worked across product teams to ship scalable interfaces for enterprise use cases.',
+    ],
+  },
+  {
+    role: 'Full-Stack Developer (Volunteer)',
+    company: 'Khubaib Foundation',
+    period: '2024',
+    points: [
+      'Delivered a website and CMS using modern frontend patterns and backend integrations.',
+      'Handled product thinking, implementation, and UI delivery from design to production.',
+      'Added content workflows that made updates easier for the organization team.',
+    ],
+  },
+  {
+    role: 'Frontend Developer',
+    company: 'DCAO',
+    period: '2020',
+    points: [
+      'Built a real-time portal for monitoring and visualization.',
+      'Implemented interactive frontend features for data-heavy operational screens.',
+      'Collaborated tightly with backend engineers on real-time integrations and delivery.',
+    ],
+  },
+];
+
+const stackGroups = [
+  {
+    title: 'Frontend Consulting',
+    items: [
+      'React.js',
+      'Next.js',
+      'TypeScript',
+      'Tailwind CSS',
+      'Redux',
+      'Storybook',
+    ],
+  },
+  {
+    title: 'Backend Support',
+    items: [
+      'FastAPI',
+      'Python',
+      'PostgreSQL',
+      'Node.js',
+      'Express.js',
+      'REST APIs',
+    ],
+  },
+  {
+    title: 'Delivery & Scale',
+    items: ['Performance Optimization', 'Vite', 'Docker', 'CI/CD', 'GitHub', 'Figma to UI'],
+  },
+];
 
 export default function Home() {
   return (
-    <div className='min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 text-slate-800 font-sans'>
-      <Head>
-        <title>
-          Full Stack Expert Abdul Zahoor | React & Next.js Specialist
-        </title>
-      </Head>
-
-      {/* Navigation */}
-      <nav className='fixed top-0 w-full bg-white/80 backdrop-blur-md border-b border-slate-200 z-50'>
-        <div className='max-w-6xl mx-auto px-6 py-4'>
-          <div className='flex justify-between items-center'>
-            <h1 className='text-xl font-semibold text-slate-800'>
-              Abdul Zahoor
-            </h1>
-            <div className='flex space-x-6'>
-              <a
-                href='#about'
-                className='text-slate-600 hover:text-slate-900 transition-colors'
-              >
-                About
-              </a>
-              <a
-                href='#experience'
-                className='text-slate-600 hover:text-slate-900 transition-colors'
-              >
-                Experience
-              </a>
-              <a
-                href='#skills'
-                className='text-slate-600 hover:text-slate-900 transition-colors'
-              >
-                Skills
-              </a>
-              <a
-                href='#resume'
-                className='text-slate-600 hover:text-slate-900 transition-colors'
-              >
-                Resume
-              </a>
-            </div>
+    <div className='min-h-screen bg-[radial-gradient(circle_at_top,_rgba(251,191,36,0.16),_transparent_32%),linear-gradient(180deg,_#fffdf8_0%,_#fff7ed_38%,_#f8fafc_100%)] text-slate-900'>
+      <nav className='sticky top-0 z-50 border-b border-orange-100 bg-white/85 backdrop-blur-xl'>
+        <div className='mx-auto flex max-w-6xl items-center justify-between px-6 py-4'>
+          <a href='#top' className='text-lg font-semibold tracking-tight text-slate-900'>
+            Abdul Zahoor
+          </a>
+          <div className='hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex'>
+            <a href='#projects' className='hover:text-slate-900'>
+              Projects
+            </a>
+            <a href='#services' className='hover:text-slate-900'>
+              Services
+            </a>
+            <a href='#experience' className='hover:text-slate-900'>
+              Experience
+            </a>
+            <a href='#contact' className='hover:text-slate-900'>
+              Hire Me
+            </a>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section className='flex flex-col items-center justify-center min-h-screen text-center p-6 pt-20'>
-        <div className='max-w-4xl mx-auto'>
-          <div className='mb-8'>
-            <div className='w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center overflow-hidden'>
-              <Image
-                src='/Abdul_Zahoor.jpg'
-                alt='Profile Picture'
-                width={128}
-                height={128}
-                className='w-full h-full object-cover'
-              />
-            </div>
-          </div>
-          <h1 className='text-5xl md:text-7xl font-bold text-slate-800 mb-6 leading-tight'>
-            Abdul Zahoor
-          </h1>
-          <p className='text-xl md:text-2xl text-slate-600 mb-4 font-medium'>
-            Full Stack Developer
-          </p>
-          <p className='text-lg text-slate-500 mb-4 max-w-2xl mx-auto'>
-            Crafting exceptional user experiences with modern web technologies.
-            Specialized in React, Next.js, and full-stack development.
-          </p>
-          <p className='text-xs text-slate-500 mb-8'>
-            I&apos;m a full-stack developer with extensive frontend experience,
-            passionate about building scalable and efficient web applications
-            with cutting-edge technologies.
-          </p>
-          <div className='flex flex-wrap justify-center gap-4 mb-8'>
-            <a
-              href='mailto:its4zahoor@gmail.com'
-              className='px-6 py-3 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors duration-200 flex items-center gap-2'
-            >
-              <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 20 20'>
-                <path d='M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z' />
-                <path d='M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z' />
-              </svg>
-              Get in Touch
-            </a>
-            <a
-              href='https://github.com/its4zahoor'
-              className='px-6 py-3 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors duration-200 flex items-center gap-2'
-            >
-              <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 20 20'>
-                <path
-                  fillRule='evenodd'
-                  d='M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z'
-                  clipRule='evenodd'
-                />
-              </svg>
-              GitHub
-            </a>
-            <a
-              href='https://www.linkedin.com/in/its4zahoor'
-              className='px-6 py-3 border border-slate-300 text-slate-700 rounded-lg hover:bg-slate-50 transition-colors duration-200 flex items-center gap-2'
-            >
-              <svg className='w-5 h-5' fill='currentColor' viewBox='0 0 20 20'>
-                <path
-                  fillRule='evenodd'
-                  d='M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z'
-                  clipRule='evenodd'
-                />
-              </svg>
-              LinkedIn
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id='skills' className='py-20 px-6 bg-white'>
-        <div className='max-w-6xl mx-auto'>
-          <div className='text-center mb-16'>
-            <h2 className='text-4xl font-bold text-slate-800 mb-4'>
-              Technical Skills
-            </h2>
-            <p className='text-lg text-slate-600 max-w-2xl mx-auto'>
-              Proficient in modern web technologies with a focus on creating
-              scalable, maintainable applications.
-            </p>
-          </div>
-
-          <div className='grid md:grid-cols-3 gap-8'>
-            <div className='bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-xl border border-blue-100'>
-              <h3 className='text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2'>
-                <svg
-                  className='w-6 h-6 text-blue-600'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z'
-                  />
-                </svg>
-                Frontend
-              </h3>
-              <div className='space-y-2 text-slate-700'>
-                <p>React.js, Next.js, TypeScript</p>
-                <p>Tailwind CSS, Material-UI</p>
-                <p>Redux, Storybook</p>
-                <p>HTML5, CSS3, JavaScript</p>
-              </div>
-            </div>
-
-            <div className='bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-xl border border-emerald-100'>
-              <h3 className='text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2'>
-                <svg
-                  className='w-6 h-6 text-emerald-600'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01'
-                  />
-                </svg>
-                Backend
-              </h3>
-              <div className='space-y-2 text-slate-700'>
-                <p>Node.js, Express.js</p>
-                <p>MongoDB, MySQL</p>
-                <p>RESTful APIs</p>
-                <p>WebRTC, Socket.io</p>
-              </div>
-            </div>
-
-            <div className='bg-gradient-to-br from-amber-50 to-orange-50 p-8 rounded-xl border border-amber-100'>
-              <h3 className='text-xl font-semibold text-slate-800 mb-4 flex items-center gap-2'>
-                <svg
-                  className='w-6 h-6 text-amber-600'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z'
-                  />
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'
-                  />
-                </svg>
-                Tools & DevOps
-              </h3>
-              <div className='space-y-2 text-slate-700'>
-                <p>Git, GitHub</p>
-                <p>Webpack, Vite.js</p>
-                <p>Docker, CI/CD</p>
-                <p>Figma, Jira</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Work Experience Section */}
-      <section id='experience' className='py-20 px-6 bg-slate-50'>
-        <div className='max-w-4xl mx-auto'>
-          <div className='text-center mb-16'>
-            <h2 className='text-4xl font-bold text-slate-800 mb-4'>
-              Professional Experience
-            </h2>
-            <p className='text-lg text-slate-600'>
-              A journey of continuous learning and growth in software
-              development.
-            </p>
-          </div>
-
-          <div className='space-y-8'>
-            <div className='bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow duration-200'>
-              <div className='flex flex-col md:flex-row md:items-center md:justify-between mb-4'>
-                <h3 className='text-2xl font-semibold text-slate-800'>
-                  Senior Frontend Engineer
-                </h3>
-                <span className='text-slate-500 font-medium'>
-                  2020 - Present
-                </span>
-              </div>
-              <p className='text-lg text-blue-600 font-medium mb-4'>
-                Rafay Systems
+      <main id='top'>
+        <section className='px-6 pb-16 pt-16 md:pb-24 md:pt-24'>
+          <div className='mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]'>
+            <div>
+              <p className='mb-4 inline-flex rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-sm font-semibold text-orange-700'>
+                Available for remote React consulting
               </p>
-              <ul className='space-y-2 text-slate-700'>
-                <li className='flex items-start gap-2'>
-                  <span className='w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0'></span>
-                  <span>
-                    Led UI revamp efforts and implemented best practices for
-                    component architecture
-                  </span>
-                </li>
-                <li className='flex items-start gap-2'>
-                  <span className='w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0'></span>
-                  <span>
-                    Integrated Storybook for comprehensive component
-                    documentation and testing
-                  </span>
-                </li>
-                <li className='flex items-start gap-2'>
-                  <span className='w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0'></span>
-                  <span>
-                    Enhanced application performance through code splitting and
-                    memoization techniques
-                  </span>
-                </li>
-                <li className='flex items-start gap-2'>
-                  <span className='w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0'></span>
-                  <span>
-                    Implemented Vite.js to significantly improve build times and
-                    development experience
-                  </span>
-                </li>
-              </ul>
-            </div>
-
-            <div className='bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow duration-200'>
-              <div className='flex flex-col md:flex-row md:items-center md:justify-between mb-4'>
-                <h3 className='text-2xl font-semibold text-slate-800'>
-                  Full-Stack Developer (Volunteer)
-                </h3>
-                <span className='text-slate-500 font-medium'>2024</span>
-              </div>
-              <p className='text-lg text-emerald-600 font-medium mb-4'>
-                Khubaib Foundation
+              <h1 className='max-w-4xl text-5xl font-black leading-tight tracking-tight text-slate-950 md:text-7xl'>
+                React Consultant for SaaS Dashboards & High-Performance Web Apps
+              </h1>
+              <p className='mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl'>
+                I help startups build fast, scalable, and clean React applications with a strong focus on
+                dashboards, frontend architecture, and shipping polished product experiences.
               </p>
-              <ul className='space-y-2 text-slate-700'>
-                <li className='flex items-start gap-2'>
-                  <span className='w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0'></span>
-                  <span>
-                    Developed comprehensive website and Content Management
-                    System (CMS)
-                  </span>
-                </li>
-                <li className='flex items-start gap-2'>
-                  <span className='w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0'></span>
-                  <span>
-                    Designed and implemented UI based on Figma designs using
-                    Next.js and Material-UI
-                  </span>
-                </li>
-                <li className='flex items-start gap-2'>
-                  <span className='w-2 h-2 bg-emerald-500 rounded-full mt-2 flex-shrink-0'></span>
-                  <span>
-                    Built a robust blog system for event tracking and content
-                    management
-                  </span>
-                </li>
-              </ul>
-            </div>
 
-            <div className='bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow duration-200'>
-              <div className='flex flex-col md:flex-row md:items-center md:justify-between mb-4'>
-                <h3 className='text-2xl font-semibold text-slate-800'>
-                  Frontend Developer
-                </h3>
-                <span className='text-slate-500 font-medium'>2020</span>
+              <div className='mt-8 flex flex-wrap gap-3'>
+                {focusAreas.map((item) => (
+                  <span
+                    key={item}
+                    className='rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm'
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
-              <p className='text-lg text-purple-600 font-medium mb-4'>DCAO</p>
-              <ul className='space-y-2 text-slate-700'>
-                <li className='flex items-start gap-2'>
-                  <span className='w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0'></span>
-                  <span>
-                    Developed dynamic kiosk portal for COVID monitoring and data
-                    visualization
-                  </span>
-                </li>
-                <li className='flex items-start gap-2'>
-                  <span className='w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0'></span>
-                  <span>
-                    Implemented WebRTC, MQTT, and Socket.io for real-time
-                    communications
-                  </span>
-                </li>
-                <li className='flex items-start gap-2'>
-                  <span className='w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0'></span>
-                  <span>
-                    Collaborated with backend developers to streamline API
-                    integration and data flow
-                  </span>
-                </li>
-              </ul>
-            </div>
 
-            <div className='bg-white p-8 rounded-xl shadow-sm border border-slate-200 hover:shadow-md transition-shadow duration-200'>
-              <div className='flex flex-col md:flex-row md:items-center md:justify-between mb-4'>
-                <h3 className='text-2xl font-semibold text-slate-800'>
-                  Junior Software Engineer
-                </h3>
-                <span className='text-slate-500 font-medium'>2018 - 2020</span>
-              </div>
-              <p className='text-lg text-amber-600 font-medium mb-4'>
-                DevUp Technologies
-              </p>
-              <ul className='space-y-2 text-slate-700'>
-                <li className='flex items-start gap-2'>
-                  <span className='w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0'></span>
-                  <span>
-                    Developed web applications and Windows Forms applications
-                  </span>
-                </li>
-                <li className='flex items-start gap-2'>
-                  <span className='w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0'></span>
-                  <span>
-                    Created reusable React templates for faster project setup
-                    and development
-                  </span>
-                </li>
-                <li className='flex items-start gap-2'>
-                  <span className='w-2 h-2 bg-amber-500 rounded-full mt-2 flex-shrink-0'></span>
-                  <span>
-                    Automated tool generation for database schemas and
-                    development workflows
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Education & Awards Section */}
-      <section className='py-20 px-6 bg-white'>
-        <div className='max-w-4xl mx-auto'>
-          <div className='text-center mb-16'>
-            <h2 className='text-4xl font-bold text-slate-800 mb-4'>
-              Education & Recognition
-            </h2>
-            <p className='text-lg text-slate-600'>
-              Academic excellence and professional achievements.
-            </p>
-          </div>
-
-          <div className='grid md:grid-cols-2 gap-8'>
-            <div className='bg-gradient-to-br from-slate-50 to-blue-50 p-8 rounded-xl border border-slate-200'>
-              <h3 className='text-2xl font-semibold text-slate-800 mb-4 flex items-center gap-2'>
-                <svg
-                  className='w-6 h-6 text-blue-600'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
+              <div className='mt-10 flex flex-wrap gap-4'>
+                <a
+                  href='#projects'
+                  className='rounded-xl bg-slate-950 px-6 py-3 font-semibold text-white shadow-lg shadow-slate-900/15 transition hover:bg-slate-800'
                 >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M12 14l9-5-9-5-9 5 9 5z'
-                  />
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z'
-                  />
-                </svg>
-                Education
-              </h3>
-              <div className='space-y-3'>
-                <div>
-                  <h4 className='text-lg font-semibold text-slate-800'>
-                    B.S. Computer Science
-                  </h4>
-                  <p className='text-slate-600'>Air University, Pakistan</p>
-                  <p className='text-sm text-slate-500'>2014 - 2018</p>
-                </div>
-                <div className='bg-yellow-50 border border-yellow-200 rounded-lg p-4'>
-                  <p className='text-yellow-800 font-medium'>
-                    🏆 Gold Medalist
-                  </p>
-                </div>
+                  View Projects
+                </a>
+                <a
+                  href='mailto:its4zahoor@gmail.com'
+                  className='rounded-xl border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:border-slate-900 hover:text-slate-950'
+                >
+                  Hire Me
+                </a>
               </div>
             </div>
 
-            <div className='bg-gradient-to-br from-slate-50 to-emerald-50 p-8 rounded-xl border border-slate-200'>
-              <h3 className='text-2xl font-semibold text-slate-800 mb-4 flex items-center gap-2'>
-                <svg
-                  className='w-6 h-6 text-emerald-600'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z'
-                  />
-                </svg>
-                Awards & Recognition
-              </h3>
-              <div className='space-y-3'>
-                <div className='bg-emerald-50 border border-emerald-200 rounded-lg p-4'>
-                  <h4 className='text-lg font-semibold text-emerald-800'>
-                    Rafay Hackathon 2023
-                  </h4>
-                  <p className='text-emerald-700'>🥈 Runners Up</p>
+            <div className='relative'>
+              <div className='absolute -left-4 top-10 h-24 w-24 rounded-full bg-orange-200/60 blur-2xl' />
+              <div className='absolute -right-2 bottom-12 h-32 w-32 rounded-full bg-sky-200/70 blur-3xl' />
+              <div className='relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/90 p-6 shadow-2xl shadow-orange-100'>
+                <div className='flex items-center gap-4'>
+                  <div className='h-20 w-20 overflow-hidden rounded-2xl border border-orange-100 bg-gradient-to-br from-orange-100 to-amber-50'>
+                    <Image
+                      src='/Abdul_Zahoor.jpg'
+                      alt='Abdul Zahoor'
+                      width={80}
+                      height={80}
+                      className='h-full w-full object-cover'
+                    />
+                  </div>
+                  <div>
+                    <p className='text-xl font-bold text-slate-950'>Abdul Zahoor</p>
+                    <p className='text-sm font-medium text-slate-600'>
+                      React consultant with full-stack delivery experience
+                    </p>
+                  </div>
                 </div>
-                <div className='bg-blue-50 border border-blue-200 rounded-lg p-4'>
-                  <h4 className='text-lg font-semibold text-blue-800'>
-                    Senior Frontend Engineer
-                  </h4>
-                  <p className='text-blue-700'>
-                    5+ years of professional experience
+
+                <div className='mt-6 grid gap-4 sm:grid-cols-2'>
+                  <div className='rounded-2xl bg-slate-950 p-5 text-white'>
+                    <p className='text-sm uppercase tracking-[0.2em] text-slate-300'>Primary Focus</p>
+                    <p className='mt-2 text-lg font-semibold'>SaaS dashboards that feel fast and easy to use</p>
+                  </div>
+                  <div className='rounded-2xl border border-slate-200 bg-slate-50 p-5'>
+                    <p className='text-sm uppercase tracking-[0.2em] text-slate-500'>Backend Fit</p>
+                    <p className='mt-2 text-lg font-semibold text-slate-900'>
+                      FastAPI, Python, and PostgreSQL for APIs behind the UI
+                    </p>
+                  </div>
+                </div>
+
+                <div className='mt-4 rounded-2xl border border-orange-100 bg-orange-50 p-5'>
+                  <p className='text-sm font-semibold uppercase tracking-[0.2em] text-orange-700'>What clients get</p>
+                  <p className='mt-2 text-base text-slate-700'>
+                    Clear communication, thoughtful architecture, and production-ready frontend work that supports
+                    product growth instead of slowing it down.
                   </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Resume Section */}
-      <section id='resume' className='py-20 px-6 bg-slate-50'>
-        <div className='max-w-4xl mx-auto text-center'>
-          <h2 className='text-4xl font-bold text-slate-800 mb-4'>Resume</h2>
-          <p className='text-lg text-slate-600 mb-8'>
-            Download my detailed resume or view it online.
-          </p>
+        <section className='px-6 pb-8'>
+          <div className='mx-auto grid max-w-6xl gap-4 rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-sm md:grid-cols-3'>
+            <div className='rounded-2xl border border-slate-200 bg-slate-50 p-5'>
+              <p className='text-sm font-semibold uppercase tracking-[0.22em] text-slate-500'>Consulting Angle</p>
+              <p className='mt-3 text-lg font-semibold text-slate-900'>
+                Product-minded React delivery for startups and SaaS teams
+              </p>
+            </div>
+            <div className='rounded-2xl border border-slate-200 bg-slate-50 p-5'>
+              <p className='text-sm font-semibold uppercase tracking-[0.22em] text-slate-500'>Technical Strength</p>
+              <p className='mt-3 text-lg font-semibold text-slate-900'>
+                Frontend performance, reusable UI systems, and scalable app structure
+              </p>
+            </div>
+            <div className='rounded-2xl border border-slate-200 bg-slate-50 p-5'>
+              <p className='text-sm font-semibold uppercase tracking-[0.22em] text-slate-500'>Full-Stack Support</p>
+              <p className='mt-3 text-lg font-semibold text-slate-900'>
+                FastAPI, Python, and PostgreSQL when the dashboard needs a reliable backend too
+              </p>
+            </div>
+          </div>
+        </section>
 
-          <div className='mb-8'>
-            <a
-              href={resumeSrc}
-              download
-              className='inline-flex items-center gap-2 px-8 py-4 bg-slate-800 text-white rounded-lg hover:bg-slate-700 transition-colors duration-200 font-medium'
-            >
-              <svg
-                className='w-5 h-5'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
+        <section id='projects' className='px-6 py-20'>
+          <div className='mx-auto max-w-6xl'>
+            <div className='max-w-3xl'>
+              <p className='text-sm font-semibold uppercase tracking-[0.3em] text-orange-700'>Selected Work</p>
+              <h2 className='mt-3 text-4xl font-black tracking-tight text-slate-950 md:text-5xl'>
+                Projects framed around outcomes, not just tech stacks
+              </h2>
+              <p className='mt-5 text-lg leading-8 text-slate-600'>
+                The work below highlights the kind of client problems I can help solve: dashboard UX, performance,
+                maintainability, and shipping clean interfaces backed by practical engineering choices.
+              </p>
+            </div>
+
+            <div className='mt-12 grid gap-6 lg:grid-cols-3'>
+              {projects.map((project) => (
+                <article
+                  key={project.title}
+                  className={`rounded-[2rem] border border-slate-200 bg-gradient-to-br ${project.accent} p-8 shadow-sm`}
+                >
+                  <p className='text-sm font-semibold uppercase tracking-[0.2em] text-slate-500'>{project.company}</p>
+                  <h3 className='mt-3 text-2xl font-bold tracking-tight text-slate-950'>{project.title}</h3>
+                  <p className='mt-4 text-base leading-7 text-slate-700'>{project.summary}</p>
+                  <ul className='mt-6 space-y-3'>
+                    {project.results.map((result) => (
+                      <li key={result} className='flex gap-3 text-sm leading-6 text-slate-700'>
+                        <span className='mt-2 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-orange-500' />
+                        <span>{result}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id='services' className='px-6 py-20'>
+          <div className='mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr]'>
+            <div>
+              <p className='text-sm font-semibold uppercase tracking-[0.3em] text-orange-700'>How I Can Help</p>
+              <h2 className='mt-3 text-4xl font-black tracking-tight text-slate-950 md:text-5xl'>
+                A sharper pitch for clients who need React work done well
+              </h2>
+              <p className='mt-5 text-lg leading-8 text-slate-600'>
+                This site now leads with consulting value: where I’m strongest, what problems I solve, and how I
+                support product teams beyond just writing components.
+              </p>
+            </div>
+            <div className='grid gap-4 sm:grid-cols-2'>
+              {services.map((service) => (
+                <div key={service} className='rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm'>
+                  <p className='text-lg font-semibold text-slate-900'>{service}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id='experience' className='px-6 py-20'>
+          <div className='mx-auto max-w-6xl'>
+            <div className='max-w-3xl'>
+              <p className='text-sm font-semibold uppercase tracking-[0.3em] text-orange-700'>Experience</p>
+              <h2 className='mt-3 text-4xl font-black tracking-tight text-slate-950 md:text-5xl'>
+                Frontend depth with practical backend support
+              </h2>
+              <p className='mt-5 text-lg leading-8 text-slate-600'>
+                My strongest edge is React and SaaS UI delivery, and I also work comfortably with backend APIs and
+                data-driven systems when products need end-to-end execution.
+              </p>
+            </div>
+
+            <div className='mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]'>
+              <div className='space-y-6'>
+                {experience.map((item) => (
+                  <article key={item.role} className='rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm'>
+                    <div className='flex flex-col gap-3 md:flex-row md:items-start md:justify-between'>
+                      <div>
+                        <h3 className='text-2xl font-bold tracking-tight text-slate-950'>{item.role}</h3>
+                        <p className='mt-1 text-base font-semibold text-orange-700'>{item.company}</p>
+                      </div>
+                      <p className='text-sm font-medium uppercase tracking-[0.18em] text-slate-500'>{item.period}</p>
+                    </div>
+                    <ul className='mt-6 space-y-3'>
+                      {item.points.map((point) => (
+                        <li key={point} className='flex gap-3 text-sm leading-6 text-slate-700'>
+                          <span className='mt-2 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-slate-900' />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+
+              <aside className='rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-sm'>
+                <p className='text-sm font-semibold uppercase tracking-[0.3em] text-orange-300'>Skills & Stack</p>
+                <h3 className='mt-3 text-3xl font-black tracking-tight'>What I bring to client work</h3>
+                <div className='mt-8 space-y-8'>
+                  {stackGroups.map((group) => (
+                    <div key={group.title}>
+                      <p className='text-sm font-semibold uppercase tracking-[0.18em] text-slate-400'>{group.title}</p>
+                      <div className='mt-4 flex flex-wrap gap-2'>
+                        {group.items.map((item) => (
+                          <span
+                            key={item}
+                            className='rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-100'
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className='mt-8 rounded-[1.5rem] border border-white/10 bg-white/5 p-5'>
+                  <p className='text-sm font-semibold uppercase tracking-[0.2em] text-orange-300'>Also worth noting</p>
+                  <p className='mt-3 text-sm leading-7 text-slate-300'>
+                    When a dashboard needs backend help, I can support API design and implementation with FastAPI,
+                    Python, and PostgreSQL so frontend and data workflows stay aligned.
+                  </p>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section id='contact' className='px-6 pb-24 pt-10'>
+          <div className='mx-auto max-w-6xl rounded-[2.25rem] border border-orange-200 bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-400 p-10 text-slate-950 shadow-xl shadow-orange-200/50'>
+            <p className='text-sm font-semibold uppercase tracking-[0.3em] text-slate-900/70'>Available for remote work</p>
+            <h2 className='mt-4 max-w-3xl text-4xl font-black tracking-tight md:text-5xl'>
+              If you need a React consultant for a SaaS product, let&apos;s talk.
+            </h2>
+            <p className='mt-5 max-w-2xl text-lg leading-8 text-slate-900/80'>
+              I can help with new dashboard builds, frontend cleanup, performance bottlenecks, and shipping polished
+              product UI without unnecessary complexity.
+            </p>
+
+            <div className='mt-8 flex flex-wrap gap-4'>
+              <a
+                href='mailto:its4zahoor@gmail.com'
+                className='rounded-xl bg-slate-950 px-6 py-3 font-semibold text-white transition hover:bg-slate-800'
               >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'
-                />
-              </svg>
-              Download Resume
-            </a>
+                Email: its4zahoor@gmail.com
+              </a>
+              <a
+                href='https://www.linkedin.com/in/its4zahoor'
+                className='rounded-xl border border-slate-900/20 bg-white/60 px-6 py-3 font-semibold text-slate-900 transition hover:bg-white'
+              >
+                Connect on LinkedIn
+              </a>
+              <a
+                href={resumeSrc}
+                download
+                className='rounded-xl border border-slate-900/20 bg-white/60 px-6 py-3 font-semibold text-slate-900 transition hover:bg-white'
+              >
+                Download Resume
+              </a>
+            </div>
           </div>
+        </section>
+      </main>
 
-          <div className='bg-white rounded-xl shadow-lg overflow-hidden'>
-            <iframe
-              src={resumeSrc}
-              className='w-full h-96 md:h-[600px]'
-              title='Resume PDF'
-            ></iframe>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className='bg-slate-800 text-white py-12 px-6'>
-        <div className='max-w-4xl mx-auto text-center'>
-          <h3 className='text-2xl font-semibold mb-4'>Abdul Zahoor</h3>
-          <p className='text-slate-300 mb-6'>
-            Full Stack Expert passionately creating GenAI products and building
-            scalable web applications.
+      <footer className='border-t border-slate-200 bg-white/70 px-6 py-10'>
+        <div className='mx-auto flex max-w-6xl flex-col gap-4 text-sm text-slate-600 md:flex-row md:items-center md:justify-between'>
+          <p>
+            Abdul Zahoor | React Consultant for SaaS Dashboards & High-Performance Web Apps
           </p>
-          <div className='flex justify-center space-x-6 mb-6'>
-            <a
-              href='mailto:its4zahoor@gmail.com'
-              className='text-slate-300 hover:text-white transition-colors'
-            >
+          <div className='flex gap-5'>
+            <a href='mailto:its4zahoor@gmail.com' className='hover:text-slate-950'>
               Email
             </a>
-            <a
-              href='https://github.com/its4zahoor'
-              className='text-slate-300 hover:text-white transition-colors'
-            >
+            <a href='https://github.com/its4zahoor' className='hover:text-slate-950'>
               GitHub
             </a>
-            <a
-              href='https://www.linkedin.com/in/its4zahoor'
-              className='text-slate-300 hover:text-white transition-colors'
-            >
+            <a href='https://www.linkedin.com/in/its4zahoor' className='hover:text-slate-950'>
               LinkedIn
             </a>
           </div>
-          <p className='text-slate-400 text-sm'>
-            © 2025 - {curentYear} Abdul Zahoor. All rights reserved.
-          </p>
+          <p>© {currentYear} Abdul Zahoor</p>
         </div>
       </footer>
     </div>

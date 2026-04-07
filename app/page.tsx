@@ -18,7 +18,7 @@ const focusAreas = [
 ];
 
 const trustPoints = [
-  '5+ years building production React apps',
+  'Building production React apps since 2018',
   'Strong dashboard and enterprise UI experience',
   'FastAPI, Python, and PostgreSQL support when needed',
 ];

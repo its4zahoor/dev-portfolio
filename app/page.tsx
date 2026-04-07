@@ -1,19 +1,26 @@
+import Link from 'next/link';
 import Image from 'next/image';
 
 const resumeSrc = '/Abdul_Zahoor_Resume.pdf';
 const currentYear = new Date().getFullYear();
 
 const services = [
-  'Build SaaS dashboards from scratch',
-  'Fix slow React apps and improve frontend performance',
-  'Clean and scale messy codebases',
-  'Convert Figma designs into production-ready UI',
+  'Build SaaS dashboards that are clean, scalable, and easy to maintain',
+  'Fix slow React apps and remove frontend bottlenecks',
+  'Turn messy codebases into predictable product delivery',
+  'Convert Figma designs into polished, production-ready UI',
 ];
 
 const focusAreas = [
   'SaaS Dashboards',
   'Performance Optimization',
   'Next.js Applications',
+];
+
+const trustPoints = [
+  '5+ years building production React apps',
+  'Strong dashboard and enterprise UI experience',
+  'FastAPI, Python, and PostgreSQL support when needed',
 ];
 
 const projects = [
@@ -135,6 +142,9 @@ export default function Home() {
             <a href='#experience' className='hover:text-slate-900'>
               Experience
             </a>
+            <Link href='/blog' className='hover:text-slate-900'>
+              Blog
+            </Link>
             <a href='#contact' className='hover:text-slate-900'>
               Hire Me
             </a>
@@ -153,8 +163,12 @@ export default function Home() {
                 React Consultant for SaaS Dashboards & High-Performance Web Apps
               </h1>
               <p className='mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl'>
-                I help startups build fast, scalable, and clean React applications with a strong focus on
-                dashboards, frontend architecture, and shipping polished product experiences.
+                I help startups and SaaS teams ship dashboards faster, fix slow React apps, and turn complex product
+                requirements into clean, production-ready interfaces.
+              </p>
+              <p className='mt-4 max-w-2xl text-base leading-7 text-slate-500'>
+                If you need someone who can step in, understand the product quickly, and deliver without hand-holding,
+                that&apos;s exactly the role I&apos;m built for.
               </p>
 
               <div className='mt-8 flex flex-wrap gap-3'>
@@ -173,14 +187,22 @@ export default function Home() {
                   href='#projects'
                   className='rounded-xl bg-slate-950 px-6 py-3 font-semibold text-white shadow-lg shadow-slate-900/15 transition hover:bg-slate-800'
                 >
-                  View Projects
+                  View Proof
                 </a>
                 <a
                   href='mailto:its4zahoor@gmail.com'
                   className='rounded-xl border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:border-slate-900 hover:text-slate-950'
                 >
-                  Hire Me
+                  Invite Me to Your Project
                 </a>
+              </div>
+
+              <div className='mt-8 flex flex-wrap gap-3 text-sm font-medium text-slate-600'>
+                {trustPoints.map((point) => (
+                  <span key={point} className='rounded-full bg-white/80 px-3 py-2 shadow-sm ring-1 ring-slate-200'>
+                    {point}
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -222,8 +244,8 @@ export default function Home() {
                 <div className='mt-4 rounded-2xl border border-orange-100 bg-orange-50 p-5'>
                   <p className='text-sm font-semibold uppercase tracking-[0.2em] text-orange-700'>What clients get</p>
                   <p className='mt-2 text-base text-slate-700'>
-                    Clear communication, thoughtful architecture, and production-ready frontend work that supports
-                    product growth instead of slowing it down.
+                    Senior-level ownership, clean communication, and frontend work that helps your team move faster
+                    instead of creating more maintenance debt.
                   </p>
                 </div>
               </div>
@@ -234,21 +256,21 @@ export default function Home() {
         <section className='px-6 pb-8'>
           <div className='mx-auto grid max-w-6xl gap-4 rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-sm md:grid-cols-3'>
             <div className='rounded-2xl border border-slate-200 bg-slate-50 p-5'>
-              <p className='text-sm font-semibold uppercase tracking-[0.22em] text-slate-500'>Consulting Angle</p>
+              <p className='text-sm font-semibold uppercase tracking-[0.22em] text-slate-500'>Why Hire Me</p>
               <p className='mt-3 text-lg font-semibold text-slate-900'>
-                Product-minded React delivery for startups and SaaS teams
+                Product-minded React delivery for startups that need momentum, not babysitting
               </p>
             </div>
             <div className='rounded-2xl border border-slate-200 bg-slate-50 p-5'>
-              <p className='text-sm font-semibold uppercase tracking-[0.22em] text-slate-500'>Technical Strength</p>
+              <p className='text-sm font-semibold uppercase tracking-[0.22em] text-slate-500'>Technical Edge</p>
               <p className='mt-3 text-lg font-semibold text-slate-900'>
-                Frontend performance, reusable UI systems, and scalable app structure
+                Frontend performance, reusable UI systems, and scalable app architecture
               </p>
             </div>
             <div className='rounded-2xl border border-slate-200 bg-slate-50 p-5'>
-              <p className='text-sm font-semibold uppercase tracking-[0.22em] text-slate-500'>Full-Stack Support</p>
+              <p className='text-sm font-semibold uppercase tracking-[0.22em] text-slate-500'>Bonus Value</p>
               <p className='mt-3 text-lg font-semibold text-slate-900'>
-                FastAPI, Python, and PostgreSQL when the dashboard needs a reliable backend too
+                FastAPI, Python, and PostgreSQL support when the dashboard needs a reliable backend too
               </p>
             </div>
           </div>
@@ -259,11 +281,11 @@ export default function Home() {
             <div className='max-w-3xl'>
               <p className='text-sm font-semibold uppercase tracking-[0.3em] text-orange-700'>Selected Work</p>
               <h2 className='mt-3 text-4xl font-black tracking-tight text-slate-950 md:text-5xl'>
-                Projects framed around outcomes, not just tech stacks
+                Proof that I can ship the kind of work clients pay for
               </h2>
               <p className='mt-5 text-lg leading-8 text-slate-600'>
-                The work below highlights the kind of client problems I can help solve: dashboard UX, performance,
-                maintainability, and shipping clean interfaces backed by practical engineering choices.
+                These projects show the problems I solve best: dashboard UX, frontend performance, maintainability,
+                real-time interfaces, and translating product requirements into polished delivery.
               </p>
             </div>
 
@@ -295,11 +317,11 @@ export default function Home() {
             <div>
               <p className='text-sm font-semibold uppercase tracking-[0.3em] text-orange-700'>How I Can Help</p>
               <h2 className='mt-3 text-4xl font-black tracking-tight text-slate-950 md:text-5xl'>
-                A sharper pitch for clients who need React work done well
+                The kind of client work I&apos;m best at winning and delivering
               </h2>
               <p className='mt-5 text-lg leading-8 text-slate-600'>
-                This site now leads with consulting value: where I’m strongest, what problems I solve, and how I
-                support product teams beyond just writing components.
+                I&apos;m a strong fit when you need someone who can join an existing team quickly, own the frontend,
+                improve quality, and ship with minimal back-and-forth.
               </p>
             </div>
             <div className='grid gap-4 sm:grid-cols-2'>
@@ -317,11 +339,11 @@ export default function Home() {
             <div className='max-w-3xl'>
               <p className='text-sm font-semibold uppercase tracking-[0.3em] text-orange-700'>Experience</p>
               <h2 className='mt-3 text-4xl font-black tracking-tight text-slate-950 md:text-5xl'>
-                Frontend depth with practical backend support
+                React-first experience shaped by real product teams
               </h2>
               <p className='mt-5 text-lg leading-8 text-slate-600'>
-                My strongest edge is React and SaaS UI delivery, and I also work comfortably with backend APIs and
-                data-driven systems when products need end-to-end execution.
+                My strongest edge is React consulting for SaaS products, and I bring practical backend awareness so
+                frontend decisions stay grounded in real product and API constraints.
               </p>
             </div>
 
@@ -350,7 +372,7 @@ export default function Home() {
 
               <aside className='rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-sm'>
                 <p className='text-sm font-semibold uppercase tracking-[0.3em] text-orange-300'>Skills & Stack</p>
-                <h3 className='mt-3 text-3xl font-black tracking-tight'>What I bring to client work</h3>
+                <h3 className='mt-3 text-3xl font-black tracking-tight'>What clients can hire me for</h3>
                 <div className='mt-8 space-y-8'>
                   {stackGroups.map((group) => (
                     <div key={group.title}>
@@ -372,8 +394,8 @@ export default function Home() {
                 <div className='mt-8 rounded-[1.5rem] border border-white/10 bg-white/5 p-5'>
                   <p className='text-sm font-semibold uppercase tracking-[0.2em] text-orange-300'>Also worth noting</p>
                   <p className='mt-3 text-sm leading-7 text-slate-300'>
-                    When a dashboard needs backend help, I can support API design and implementation with FastAPI,
-                    Python, and PostgreSQL so frontend and data workflows stay aligned.
+                    When a project needs more than UI delivery, I can also support API implementation with FastAPI,
+                    Python, and PostgreSQL so product teams are not blocked between frontend and backend.
                   </p>
                 </div>
               </aside>
@@ -385,11 +407,11 @@ export default function Home() {
           <div className='mx-auto max-w-6xl rounded-[2.25rem] border border-orange-200 bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-400 p-10 text-slate-950 shadow-xl shadow-orange-200/50'>
             <p className='text-sm font-semibold uppercase tracking-[0.3em] text-slate-900/70'>Available for remote work</p>
             <h2 className='mt-4 max-w-3xl text-4xl font-black tracking-tight md:text-5xl'>
-              If you need a React consultant for a SaaS product, let&apos;s talk.
+              Need a React consultant who can make sense of a SaaS product quickly and start delivering?
             </h2>
             <p className='mt-5 max-w-2xl text-lg leading-8 text-slate-900/80'>
-              I can help with new dashboard builds, frontend cleanup, performance bottlenecks, and shipping polished
-              product UI without unnecessary complexity.
+              I can help with dashboard builds, frontend cleanup, performance issues, design-to-code delivery, and
+              getting a product interface to a level that feels sharp, fast, and reliable.
             </p>
 
             <div className='mt-8 flex flex-wrap gap-4'>
@@ -397,13 +419,13 @@ export default function Home() {
                 href='mailto:its4zahoor@gmail.com'
                 className='rounded-xl bg-slate-950 px-6 py-3 font-semibold text-white transition hover:bg-slate-800'
               >
-                Email: its4zahoor@gmail.com
+                Email Me
               </a>
               <a
                 href='https://www.linkedin.com/in/its4zahoor'
                 className='rounded-xl border border-slate-900/20 bg-white/60 px-6 py-3 font-semibold text-slate-900 transition hover:bg-white'
               >
-                Connect on LinkedIn
+                Message Me on LinkedIn
               </a>
               <a
                 href={resumeSrc}
@@ -413,6 +435,9 @@ export default function Home() {
                 Download Resume
               </a>
             </div>
+            <p className='mt-5 text-sm font-medium text-slate-900/70'>
+              Email: its4zahoor@gmail.com
+            </p>
           </div>
         </section>
       </main>
@@ -426,6 +451,9 @@ export default function Home() {
             <a href='mailto:its4zahoor@gmail.com' className='hover:text-slate-950'>
               Email
             </a>
+            <Link href='/blog' className='hover:text-slate-950'>
+              Blog
+            </Link>
             <a href='https://github.com/its4zahoor' className='hover:text-slate-950'>
               GitHub
             </a>

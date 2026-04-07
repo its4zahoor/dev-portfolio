@@ -3,6 +3,8 @@ import Image from 'next/image';
 
 const resumeSrc = '/Abdul_Zahoor_Resume.pdf';
 const currentYear = new Date().getFullYear();
+const upworkUrl =
+  'https://www.upwork.com/freelancers/~01dd2792cb531e2d49?mp_source=share';
 
 const services = [
   'Build SaaS dashboards that are clean, scalable, and easy to maintain',
@@ -34,7 +36,7 @@ const projects = [
       'Reduced friction in development by introducing Storybook and a faster Vite-based workflow',
       'Optimized rendering and bundle strategy for complex, data-heavy screens',
     ],
-    accent: 'from-amber-100 via-orange-50 to-white',
+    cardClassName: 'border-amber-200 bg-amber-50',
   },
   {
     title: 'Content Platform & CMS',
@@ -46,7 +48,7 @@ const projects = [
       'Created a blog and content publishing system for ongoing updates and event tracking',
       'Delivered a cleaner admin and content experience for non-technical users',
     ],
-    accent: 'from-emerald-100 via-teal-50 to-white',
+    cardClassName: 'border-emerald-200 bg-emerald-50',
   },
   {
     title: 'Real-Time Monitoring Portal',
@@ -58,7 +60,7 @@ const projects = [
       'Integrated WebRTC, MQTT, and Socket.io for live communication features',
       'Worked closely with backend teams to keep API integrations reliable and responsive',
     ],
-    accent: 'from-sky-100 via-cyan-50 to-white',
+    cardClassName: 'border-sky-200 bg-sky-50',
   },
 ];
 
@@ -126,8 +128,8 @@ const stackGroups = [
 
 export default function Home() {
   return (
-    <div className='min-h-screen bg-[radial-gradient(circle_at_top,_rgba(251,191,36,0.16),_transparent_32%),linear-gradient(180deg,_#fffdf8_0%,_#fff7ed_38%,_#f8fafc_100%)] text-slate-900'>
-      <nav className='sticky top-0 z-50 border-b border-orange-100 bg-white/85 backdrop-blur-xl'>
+    <div className='min-h-screen bg-slate-50 text-slate-900'>
+      <nav className='sticky top-0 z-50 border-b border-blue-100 bg-slate-50/95 backdrop-blur-xl'>
         <div className='mx-auto flex max-w-6xl items-center justify-between px-6 py-4'>
           <a href='#top' className='text-lg font-semibold tracking-tight text-slate-900'>
             Abdul Zahoor
@@ -156,10 +158,10 @@ export default function Home() {
         <section className='px-6 pb-16 pt-16 md:pb-24 md:pt-24'>
           <div className='mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]'>
             <div>
-              <p className='mb-4 inline-flex rounded-full border border-orange-200 bg-orange-50 px-4 py-1 text-sm font-semibold text-orange-700'>
+              <p className='mb-4 inline-flex rounded-full border border-blue-200 bg-blue-50 px-4 py-1 text-sm font-semibold text-blue-700'>
                 Available for remote React consulting
               </p>
-              <h1 className='max-w-4xl text-5xl font-black leading-tight tracking-tight text-slate-950 md:text-7xl'>
+              <h1 className='max-w-4xl text-4xl font-black leading-tight tracking-tight text-slate-950 md:text-6xl'>
                 React Consultant for SaaS Dashboards & High-Performance Web Apps
               </h1>
               <p className='mt-6 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl'>
@@ -175,7 +177,7 @@ export default function Home() {
                 {focusAreas.map((item) => (
                   <span
                     key={item}
-                    className='rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm'
+                    className='rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-medium text-slate-700'
                   >
                     {item}
                   </span>
@@ -185,13 +187,21 @@ export default function Home() {
               <div className='mt-10 flex flex-wrap gap-4'>
                 <a
                   href='#projects'
-                  className='rounded-xl bg-slate-950 px-6 py-3 font-semibold text-white shadow-lg shadow-slate-900/15 transition hover:bg-slate-800'
+                  className='rounded-xl bg-slate-950 px-6 py-3 font-semibold text-white transition hover:bg-slate-800'
                 >
                   View Proof
                 </a>
                 <a
+                  href={upworkUrl}
+                  target='_blank'
+                  rel='noreferrer'
+                  className='rounded-xl border border-emerald-200 bg-emerald-50 px-6 py-3 font-semibold text-emerald-800 transition hover:border-emerald-300'
+                >
+                  Hire Me on Upwork
+                </a>
+                <a
                   href='mailto:its4zahoor@gmail.com'
-                  className='rounded-xl border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:border-slate-900 hover:text-slate-950'
+                  className='rounded-xl border border-blue-200 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:border-slate-900 hover:text-slate-950'
                 >
                   Invite Me to Your Project
                 </a>
@@ -199,19 +209,17 @@ export default function Home() {
 
               <div className='mt-8 flex flex-wrap gap-3 text-sm font-medium text-slate-600'>
                 {trustPoints.map((point) => (
-                  <span key={point} className='rounded-full bg-white/80 px-3 py-2 shadow-sm ring-1 ring-slate-200'>
+                  <span key={point} className='rounded-full border border-blue-100 bg-white px-3 py-2'>
                     {point}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className='relative'>
-              <div className='absolute -left-4 top-10 h-24 w-24 rounded-full bg-orange-200/60 blur-2xl' />
-              <div className='absolute -right-2 bottom-12 h-32 w-32 rounded-full bg-sky-200/70 blur-3xl' />
-              <div className='relative overflow-hidden rounded-[2rem] border border-white/70 bg-white/90 p-6 shadow-2xl shadow-orange-100'>
+            <div>
+              <div className='overflow-hidden rounded-[2rem] border border-blue-100 bg-white p-6 shadow-sm'>
                 <div className='flex items-center gap-4'>
-                  <div className='h-20 w-20 overflow-hidden rounded-2xl border border-orange-100 bg-gradient-to-br from-orange-100 to-amber-50'>
+                  <div className='h-20 w-20 overflow-hidden rounded-2xl border border-blue-100 bg-blue-50'>
                     <Image
                       src='/Abdul_Zahoor.jpg'
                       alt='Abdul Zahoor'
@@ -233,7 +241,7 @@ export default function Home() {
                     <p className='text-sm uppercase tracking-[0.2em] text-slate-300'>Primary Focus</p>
                     <p className='mt-2 text-lg font-semibold'>SaaS dashboards that feel fast and easy to use</p>
                   </div>
-                  <div className='rounded-2xl border border-slate-200 bg-slate-50 p-5'>
+                  <div className='rounded-2xl border border-sky-100 bg-sky-50 p-5'>
                     <p className='text-sm uppercase tracking-[0.2em] text-slate-500'>Backend Fit</p>
                     <p className='mt-2 text-lg font-semibold text-slate-900'>
                       FastAPI, Python, and PostgreSQL for APIs behind the UI
@@ -241,8 +249,8 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className='mt-4 rounded-2xl border border-orange-100 bg-orange-50 p-5'>
-                  <p className='text-sm font-semibold uppercase tracking-[0.2em] text-orange-700'>What clients get</p>
+                <div className='mt-4 rounded-2xl border border-amber-100 bg-amber-50 p-5'>
+                  <p className='text-sm font-semibold uppercase tracking-[0.2em] text-amber-700'>What clients get</p>
                   <p className='mt-2 text-base text-slate-700'>
                     Senior-level ownership, clean communication, and frontend work that helps your team move faster
                     instead of creating more maintenance debt.
@@ -254,20 +262,20 @@ export default function Home() {
         </section>
 
         <section className='px-6 pb-8'>
-          <div className='mx-auto grid max-w-6xl gap-4 rounded-[2rem] border border-slate-200 bg-white/80 p-6 shadow-sm md:grid-cols-3'>
-            <div className='rounded-2xl border border-slate-200 bg-slate-50 p-5'>
+          <div className='mx-auto grid max-w-6xl gap-4 rounded-[2rem] border border-blue-100 bg-white p-6 shadow-sm md:grid-cols-3'>
+            <div className='rounded-2xl border border-blue-100 bg-blue-50 p-5'>
               <p className='text-sm font-semibold uppercase tracking-[0.22em] text-slate-500'>Why Hire Me</p>
               <p className='mt-3 text-lg font-semibold text-slate-900'>
                 Product-minded React delivery for startups that need momentum, not babysitting
               </p>
             </div>
-            <div className='rounded-2xl border border-slate-200 bg-slate-50 p-5'>
+            <div className='rounded-2xl border border-amber-100 bg-amber-50 p-5'>
               <p className='text-sm font-semibold uppercase tracking-[0.22em] text-slate-500'>Technical Edge</p>
               <p className='mt-3 text-lg font-semibold text-slate-900'>
                 Frontend performance, reusable UI systems, and scalable app architecture
               </p>
             </div>
-            <div className='rounded-2xl border border-slate-200 bg-slate-50 p-5'>
+            <div className='rounded-2xl border border-sky-100 bg-sky-50 p-5'>
               <p className='text-sm font-semibold uppercase tracking-[0.22em] text-slate-500'>Bonus Value</p>
               <p className='mt-3 text-lg font-semibold text-slate-900'>
                 FastAPI, Python, and PostgreSQL support when the dashboard needs a reliable backend too
@@ -293,7 +301,7 @@ export default function Home() {
               {projects.map((project) => (
                 <article
                   key={project.title}
-                  className={`rounded-[2rem] border border-slate-200 bg-gradient-to-br ${project.accent} p-8 shadow-sm`}
+                  className={`rounded-[2rem] border p-8 shadow-sm ${project.cardClassName}`}
                 >
                   <p className='text-sm font-semibold uppercase tracking-[0.2em] text-slate-500'>{project.company}</p>
                   <h3 className='mt-3 text-2xl font-bold tracking-tight text-slate-950'>{project.title}</h3>
@@ -326,7 +334,7 @@ export default function Home() {
             </div>
             <div className='grid gap-4 sm:grid-cols-2'>
               {services.map((service) => (
-                <div key={service} className='rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm'>
+                <div key={service} className='rounded-[1.5rem] border border-blue-100 bg-white p-6 shadow-sm'>
                   <p className='text-lg font-semibold text-slate-900'>{service}</p>
                 </div>
               ))}
@@ -350,7 +358,7 @@ export default function Home() {
             <div className='mt-12 grid gap-6 lg:grid-cols-[1.1fr_0.9fr]'>
               <div className='space-y-6'>
                 {experience.map((item) => (
-                  <article key={item.role} className='rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm'>
+                  <article key={item.role} className='rounded-[2rem] border border-blue-100 bg-white p-8 shadow-sm'>
                     <div className='flex flex-col gap-3 md:flex-row md:items-start md:justify-between'>
                       <div>
                         <h3 className='text-2xl font-bold tracking-tight text-slate-950'>{item.role}</h3>
@@ -404,12 +412,12 @@ export default function Home() {
         </section>
 
         <section id='contact' className='px-6 pb-24 pt-10'>
-          <div className='mx-auto max-w-6xl rounded-[2.25rem] border border-orange-200 bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-400 p-10 text-slate-950 shadow-xl shadow-orange-200/50'>
-            <p className='text-sm font-semibold uppercase tracking-[0.3em] text-slate-900/70'>Available for remote work</p>
+          <div className='mx-auto max-w-6xl rounded-[2.25rem] border border-amber-200 bg-amber-50 p-10 text-slate-950 shadow-sm'>
+            <p className='text-sm font-semibold uppercase tracking-[0.3em] text-amber-700'>Available for remote work</p>
             <h2 className='mt-4 max-w-3xl text-4xl font-black tracking-tight md:text-5xl'>
               Need a React consultant who can make sense of a SaaS product quickly and start delivering?
             </h2>
-            <p className='mt-5 max-w-2xl text-lg leading-8 text-slate-900/80'>
+            <p className='mt-5 max-w-2xl text-lg leading-8 text-slate-600'>
               I can help with dashboard builds, frontend cleanup, performance issues, design-to-code delivery, and
               getting a product interface to a level that feels sharp, fast, and reliable.
             </p>
@@ -422,27 +430,35 @@ export default function Home() {
                 Email Me
               </a>
               <a
+                href={upworkUrl}
+                target='_blank'
+                rel='noreferrer'
+                className='rounded-xl border border-emerald-200 bg-white px-6 py-3 font-semibold text-emerald-800 transition hover:border-emerald-400'
+              >
+                Hire Me on Upwork
+              </a>
+              <a
                 href='https://www.linkedin.com/in/its4zahoor'
-                className='rounded-xl border border-slate-900/20 bg-white/60 px-6 py-3 font-semibold text-slate-900 transition hover:bg-white'
+                className='rounded-xl border border-amber-200 bg-white px-6 py-3 font-semibold text-slate-900 transition hover:border-slate-900'
               >
                 Message Me on LinkedIn
               </a>
               <a
                 href={resumeSrc}
                 download
-                className='rounded-xl border border-slate-900/20 bg-white/60 px-6 py-3 font-semibold text-slate-900 transition hover:bg-white'
+                className='rounded-xl border border-amber-200 bg-white px-6 py-3 font-semibold text-slate-900 transition hover:border-slate-900'
               >
                 Download Resume
               </a>
             </div>
-            <p className='mt-5 text-sm font-medium text-slate-900/70'>
+            <p className='mt-5 text-sm font-medium text-amber-700'>
               Email: its4zahoor@gmail.com
             </p>
           </div>
         </section>
       </main>
 
-      <footer className='border-t border-slate-200 bg-white/70 px-6 py-10'>
+      <footer className='border-t border-blue-100 bg-white px-6 py-10'>
         <div className='mx-auto flex max-w-6xl flex-col gap-4 text-sm text-slate-600 md:flex-row md:items-center md:justify-between'>
           <p>
             Abdul Zahoor | React Consultant for SaaS Dashboards & High-Performance Web Apps
@@ -450,6 +466,9 @@ export default function Home() {
           <div className='flex gap-5'>
             <a href='mailto:its4zahoor@gmail.com' className='hover:text-slate-950'>
               Email
+            </a>
+            <a href={upworkUrl} target='_blank' rel='noreferrer' className='hover:text-slate-950'>
+              Upwork
             </a>
             <Link href='/blog' className='hover:text-slate-950'>
               Blog
